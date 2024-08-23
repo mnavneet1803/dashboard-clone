@@ -26,8 +26,11 @@ const Feedbacks = () => {
 
   return (
     <div className="container my-4">
-      <div className="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div className="d-flex align-items-center justify-content-between mb-4">
+        <div style={{ minWidth: '200px' }}>
         <h2>User Feedbacks</h2>
+        </div>
+        <div style={{ minWidth: '200px' }}>
         <button
           className="btn btn-dark"
           onClick={handleExport}
@@ -35,6 +38,7 @@ const Feedbacks = () => {
           <PiExportBold style={{ marginRight: "8px", height: "18px", width: "18px" }} />
           <b> Export to Excel</b>
         </button>
+        </div>
       </div>
 
       <input
