@@ -39,7 +39,7 @@ const App = () => {
     <Router>
       <div className="d-flex">
         <Sidebar menuItems={menuItems} />
-        <div className="flex-grow-1">
+        <div className="flex-grow-1 container-sm container-md container-lg">
           <Header />
           <div className="p-4">
             <Routes>
