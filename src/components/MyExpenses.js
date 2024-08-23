@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';  // For exporting to Excel
 import { PiExportBold } from "react-icons/pi";
+import { ToastContainer, toast,Slide } from 'react-toastify';
 
 const MyExpenses = () => {
     const [expenseData, setExpenseData] = useState([
@@ -21,6 +22,7 @@ const MyExpenses = () => {
 
     // Export function to Excel
     const handleExport = () => {
+        toast('File Exported SuccessFully');
         const ws = XLSX.utils.json_to_sheet(filteredData);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
@@ -31,6 +33,19 @@ const MyExpenses = () => {
         <div className="container my-4">
             <div className="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <h2>My Expenses</h2>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    transition = {Slide}
+                />
                 <button
                     className="btn btn-dark"
                     onClick={handleExport}

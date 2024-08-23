@@ -21,11 +21,11 @@ const Feedbacks = () => {
 
   // Export function
   const handleExport = () => {
-    toast.info('File Exported SuccessFully');
     const ws = XLSX.utils.json_to_sheet(filteredData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Feedback');
     XLSX.writeFile(wb, 'Feedback.xlsx');
+    toast('File Exported SuccessFully');
   };
 
   return (
@@ -34,7 +34,7 @@ const Feedbacks = () => {
         <h2>User Feedbacks</h2>
         <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -42,7 +42,7 @@ const Feedbacks = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="colored"
+        theme="light"
         transition = {Slide}
         />
         <button
