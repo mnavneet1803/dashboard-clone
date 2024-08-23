@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { PiExportBold } from "react-icons/pi";
+import { ToastContainer, toast,Slide } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Feedbacks = () => {
   const feedbackData = [
@@ -18,6 +21,7 @@ const Feedbacks = () => {
 
   // Export function
   const handleExport = () => {
+    toast.info('File Exported SuccessFully');
     const ws = XLSX.utils.json_to_sheet(filteredData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Feedback');
@@ -28,6 +32,19 @@ const Feedbacks = () => {
     <div className="container my-4">
       <div className="d-flex flex-wrap align-items-center justify-content-between mb-4">
         <h2>User Feedbacks</h2>
+        <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition = {Slide}
+        />
         <button
           className="btn btn-dark"
           onClick={handleExport}
