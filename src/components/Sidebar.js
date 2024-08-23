@@ -50,8 +50,9 @@ const Sidebar = ({ menuItems }) => {
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
-    padding: '10px 15px',
-    fontSize: isLargeScreen ? '16px' : '14px', // Adjust font size based on screen size
+    justifyContent: isLargeScreen ? 'flex-start' : 'center', // Center icons on smaller screens
+    padding: isLargeScreen ? '10px 15px' : '10px 0', // Adjust padding for small screens
+    fontSize: isLargeScreen ? '16px' : '0px', // Hide text on smaller screens
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     transition: 'background-color 0.3s, color 0.3s',
@@ -61,15 +62,17 @@ const Sidebar = ({ menuItems }) => {
     <div
       className="d-flex flex-column vh-100 p-3 border-end sidebar"
       style={{
-        minWidth: isLargeScreen ? '250px' : '150px', // Default width for small screens, increase for larger screens
-        maxWidth: isLargeScreen ? '350px' : '200px', // Maximum width for larger screens
+        minWidth: isLargeScreen ? '250px' : '80px', // Narrow width for small screens
+        maxWidth: isLargeScreen ? '350px' : '80px', // Narrow max width for small screens
         flexShrink: 0,
         transition: 'min-width 0.3s, max-width 0.3s',
       }}
     >
-      <div className="mb-4">
-        <h4 style={{ fontSize: isLargeScreen ? '20px' : '16px' }}>My Options</h4> {/* Adjust title font size */}
-      </div>
+      {isLargeScreen && (
+        <div className="mb-4">
+          <h4 style={{ fontSize: isLargeScreen ? '20px' : '16px' }}>My Options</h4> {/* Title visible only on large screens */}
+        </div>
+      )}
       <ul className="nav flex-column">
         {menuItems.map((item, index) => (
           <li key={index} className="nav-item mb-2">
@@ -80,8 +83,14 @@ const Sidebar = ({ menuItems }) => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <img src={iconObj[item.route]} height={isLargeScreen ? '32px' : '28px'} alt={item.name} className="me-2" /> {/* Adjust icon size */}
-              <span>{item.name}</span>
+              <img 
+                src={iconObj[item.route]} 
+                height={isLargeScreen ? '32px' : '28px'} 
+                alt={item.name} 
+                className="me-2" 
+                style={{ marginRight: isLargeScreen ? '10px' : '0px' }} // Adjust margin for small screens
+              />
+              {isLargeScreen && <span>{item.name}</span>} {/* Text visible only on large screens */}
             </Link>
           </li>
         ))}
