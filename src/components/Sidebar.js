@@ -13,7 +13,6 @@ import IncomeIcon from '../assets/icons/Income.png';
 import CategoryIcon from '../assets/icons/category.png';
 import SettingIcon from '../assets/icons/setting.png';
 import Logo from '../assets/logo.png'
-import SmallLogo from '../assets/smallLogo.png'
 const Sidebar = ({ menuItems }) => {
   const location = useLocation();
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -72,12 +71,6 @@ const Sidebar = ({ menuItems }) => {
       {isLargeScreen && (
         <div className="mb-1">
           <img src={Logo} height="30px" width="200px"/>
-          {/* <h4 style={{ fontSize: isLargeScreen ? '20px' : '16px' }}>My Options</h4> Title visible only on large screens */}
-        </div>
-      )}
-     {!isLargeScreen && (
-        <div className="mb-2">
-          <img className="me-2" src={SmallLogo} height="28px"/>
           {/* <h4 style={{ fontSize: isLargeScreen ? '20px' : '16px' }}>My Options</h4> Title visible only on large screens */}
         </div>
       )}
