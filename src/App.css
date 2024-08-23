@@ -1,0 +1,17 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-link.active {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.nav-link {
+  color: #6c757d;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
