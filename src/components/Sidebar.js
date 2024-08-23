@@ -71,7 +71,7 @@ const Sidebar = ({ menuItems }) => {
     >
       {isLargeScreen && (
         <div className="mb-1">
-          <img src={Logo} height="30px"/>
+          <img src={Logo} height="30px" width="200px"/>
           {/* <h4 style={{ fontSize: isLargeScreen ? '20px' : '16px' }}>My Options</h4> Title visible only on large screens */}
         </div>
       )}
