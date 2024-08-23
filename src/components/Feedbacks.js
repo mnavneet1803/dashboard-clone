@@ -26,8 +26,8 @@ const Feedbacks = () => {
 
   return (
     <div className="container my-4">
-      <div className="d-flex align-items-center justify-content-between mb-4">
-        <h2 className="mb-0">User Feedbacks</h2>
+      <div className="d-flex flex-wrap align-items-center justify-content-between mb-4">
+        <h2>User Feedbacks</h2>
         <button
           className="btn btn-dark"
           onClick={handleExport}
