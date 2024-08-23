@@ -26,17 +26,15 @@ const DailyTimesheet = () => {
     };
 
     return (
-        <div className="container my-4">
-            <div className="d-flex flex-wrap align-items-center justify-content-between mb-4">
-                <h2>Daily Timesheet</h2>
-                <button
-                    className="btn btn-dark"
-                    onClick={handleExport}
-                >
+            <div className="container my-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <h2 className="mb-0">Daily Timesheet</h2>
+                <button className="btn btn-dark" onClick={handleExport}>
                     <PiExportBold style={{ marginRight: "8px", height: "18px", width: "18px" }} />
                     <b> Export to Excel</b>
                 </button>
             </div>
+
 
             <input
                 type="text"
