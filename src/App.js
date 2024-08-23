@@ -19,7 +19,6 @@ import Categories from './components/Categories';
 import Settings from './components/Settings';
 
 const App = () => {
-  // menu items and their corresponding components here...
   const menuItems = [
     { name: 'Dashboard', route: 'dashboard', component: Dashboard },
     { name: 'Feedbacks', route: 'feedbacks', component: Feedbacks },
@@ -39,7 +38,7 @@ const App = () => {
     <Router>
       <div className="d-flex">
         <Sidebar menuItems={menuItems} />
-        <div className="flex-grow-1">
+        <div className="content-container">
           <Header />
           <div className="p-4">
             <Routes>
