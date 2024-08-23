@@ -186,7 +186,7 @@ const Chart = ({ hw }) => {
 
         >
             <svg
-                width={width + margin.left + margin.right} // Set width and height here
+                width={(width + margin.left + margin.right) < 333 ? 333 :width + margin.left + margin.right} // Set width and height here
                 height={height + margin.top + margin.bottom}
                 ref={svgRef}
                 style={backgroundStyle}
